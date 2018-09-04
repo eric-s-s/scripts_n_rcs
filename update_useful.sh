@@ -1,13 +1,13 @@
-declare -a tilde=(".vimrc" ".bashrc" ".bash_aliases" ".inputrc") 
+declare -a tilde=(`cat home_files.txt`) 
 for el in "${tilde[@]}"
 do
     echo "in home $el"
-    cp ~/$el ~/useful
+    cp ~/$el ~/scripts_n_rcs
 done
 
-declare -a bin_files=("startup.sh" "update_useful.sh")
+declare -a bin_files=(`cat bin_files.txt`)
 for el in "${bin_files[@]}"
 do
     echo "in bin $el"
-    cp ~/bin/$el ~/useful
+    cp ~/bin/$el ~/scripts_n_rcs
 done
