@@ -74,3 +74,6 @@ fi
 
 # put usr bin on path
 PATH=$PATH:/home/eric/bin
+
+# a fix for colors on seagate backup drive
+LS_COLORS=$LS_COLORS:'ow=42;31:'; export LS_COLORS
