@@ -11,3 +11,8 @@ do
     echo "in bin $el"
     cp ~/bin/$el .
 done
+
+declare -a all_files=(`cat bin_files.txt home_files.txt`)
+
+# TODO check for files to be removed.  include this file
+# TODO include bin_files.txt, home_files.txt, README.md use git rm?

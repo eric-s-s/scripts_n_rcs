@@ -1,1 +1,2 @@
+show_ls_colors.sh
 startup.sh
