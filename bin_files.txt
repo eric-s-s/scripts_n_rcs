@@ -1,2 +1,3 @@
+color_record.sh
 show_ls_colors.sh
 startup.sh

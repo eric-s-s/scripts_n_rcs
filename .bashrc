@@ -28,11 +28,16 @@ parse_git_branch() {
 }
 
 # set prompt to user:dir (git branch) $
-PS1='\[\033[01;32m\]\u\[\033[00m\]:\[\033[01;36m\]\w\[\033[00m\]\[\033[01;35m\]$(parse_git_branch)\[\033[00m\] $ '
+NC="\[\033[00m\]"
+BGREEN="\[\033[01;32m\]"
+BCYAN="\[\033[01;36m\]"
+BPURPLE="\[\033[01;35m\]"
+
+PS1="${BGREEN}\u${NC}:${BCYAN}\w${NC}${BPURPLE}\$(parse_git_branch)${NC} $ "
 
 
 #set the upper bar title to user@host:dir
-PS1="\[\e]0;${debian_chroot:+($debian_chroot)}\u@\h: \w\a\]$PS1"
+PS1="\[\e]0;\u@\h: \w\a\]$PS1"
  
 # enable color support of ls and also add handy aliases
 if [ -x /usr/bin/dircolors ]; then
@@ -77,3 +82,4 @@ PATH=$PATH:/home/eric/bin
 
 # a fix for colors on seagate backup drive
 LS_COLORS=$LS_COLORS:'ow=42;31:'; export LS_COLORS
+
