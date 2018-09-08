@@ -80,6 +80,8 @@ fi
 # put usr bin on path
 PATH=$PATH:/home/eric/bin
 
-# a fix for colors on seagate backup drive
-LS_COLORS=$LS_COLORS:'ow=42;31:'; export LS_COLORS
+# fixes ls for (other writable) so i can read the damn font.
+# Seriously! Who thinks blue on green is ok?!?!?!? 
+BG_GREEN_FONT_RED="42;31"
+LS_COLORS="${LS_COLORS}ow=${BG_GREEN_FONT_RED}:"; export LS_COLORS
 
