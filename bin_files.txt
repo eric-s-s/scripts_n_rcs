@@ -1,3 +1,4 @@
 color_record.sh
+reset_printer.sh
 show_ls_colors.sh
 startup.sh
