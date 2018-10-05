@@ -34,7 +34,7 @@ PS1="${BGREEN}\u${NC}:${BCYAN}\w${NC}${BPURPLE}\$(parse_git_branch)${NC} $ "
 
 
 #set the upper bar title to user@host:dir
-PS1="\[\e]0;\u@\h: \w\a\]$PS1"
+PS1="\[\e]0;\u: \w\a\]$PS1"
  
 # enable color support of ls and also add handy aliases
     eval "$(dircolors -b)"
