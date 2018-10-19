@@ -1,8 +1,22 @@
+# from original .bashrc file
+# some more ls aliases
+alias ll='ls -AlF'
+alias la='ls -A'
+alias l='ls -CF'
+
+# Add an "alert" alias for long running commands.  Use like so:
+#   sleep 10; alert
+alias alert='notify-send --urgency=low -i "$([ $? = 0 ] && echo terminal || echo error)" "$(history|tail -n1|sed -e '\''s/^\s*[0-9]\+\s*//;s/[;&|]\s*alert$//'\'')"'
+
+
+# silly stuff
 
 alias mydate='date +%H:%M:%S\ --\ %a\ %d/%b/%Y'
-
 alias play_rftg='cd /home/eric/games/rftg-0.9.4;./rftg'
+alias phone_nums='cat ~/Documents/numbers.txt'
 
+
+# running env and creating .sh scripts
 function new_script {
     touch $1;
     chmod 774 $1;
@@ -16,8 +30,7 @@ function start_env {
 
 alias clean_docker='docker rmi -f $(docker images -f "dangling=true" -q --no-trunc)'
 
-alias phone_nums='cat ~/Documents/numbers.txt'
-
+# python 3.7 access
 alias py37='python3.7'
 alias pip37='python3.7 -m pip'
 alias venv37='python3.7 -m venv'
@@ -25,7 +38,7 @@ alias venv37='python3.7 -m venv'
 alias wide_view='printf "\033[8;40;200t"'
 alias regular_view='printf "\033[8;40;120t"'
 
-
+# laptop input controls
 function is_input_enabled {
     [ "$(xinput list $1 | grep disabled)" ] && echo disabled || echo enabled
 }
