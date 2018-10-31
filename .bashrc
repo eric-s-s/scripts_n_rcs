@@ -1,6 +1,14 @@
 
 PATH=$PATH:/home/eric/bin
 
+# set PATH to include go as per go instructions
+PATH="$PATH:/usr/local/go/bin"
+
+GOPATH=$(go env GOPATH)
+
+# and now gradle
+PATH="$PATH:/opt/gradle/gradle-4.10.2/bin"
+
 # don't put duplicate lines or lines starting with space in the history.
 # See bash(1) for more options
 HISTCONTROL=ignoreboth

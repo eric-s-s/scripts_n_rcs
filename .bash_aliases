@@ -11,7 +11,6 @@ alias alert='notify-send --urgency=low -i "$([ $? = 0 ] && echo terminal || echo
 
 # silly stuff
 
-alias mydate='date +%H:%M:%S\ --\ %a\ %d/%b/%Y'
 alias play_rftg='cd /home/eric/games/rftg-0.9.4;./rftg'
 alias phone_nums='cat ~/Documents/numbers.txt'
 
@@ -27,8 +26,12 @@ function start_env {
     source ~/work/environments/$1/bin/activate
 }
 
+# shortcuts for various programs
 
 alias clean_docker='docker rmi -f $(docker images -f "dangling=true" -q --no-trunc)'
+function go_bin {
+    "$(go env GOPATH)/bin/${1}"
+}
 
 # python 3.7 access
 alias py37='python3.7'
@@ -50,12 +53,9 @@ function list_inputs {
     elements=("${touch_screen}" "${touch_pad}" "${key_board}")
 
     rjust=0
-
     for el in "${elements[@]}"; do
-        let "new_rjust=${#el}+1"
-        if [ ${new_rjust} -gt ${rjust} ]; then
-            rjust=${new_rjust}
-        fi
+        new_rjust="${#el}"
+        [ ${new_rjust} -gt ${rjust} ] && rjust=${new_rjust} 
     done
         
     for el in "${elements[@]}"; do
