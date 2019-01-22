@@ -1,5 +1,5 @@
 
-PATH=$PATH:/home/eric/bin
+PATH=$PATH:/home/eric/bin:/snap/bin
 
 # set PATH to include go as per go instructions
 PATH="$PATH:/usr/local/go/bin"
@@ -8,6 +8,12 @@ GOPATH=$(go env GOPATH)
 
 # and now gradle
 PATH="$PATH:/opt/gradle/gradle-4.10.2/bin"
+
+# added by nvm on installation
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+
 
 # don't put duplicate lines or lines starting with space in the history.
 # See bash(1) for more options

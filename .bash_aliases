@@ -32,6 +32,10 @@ alias clean_docker='docker rmi -f $(docker images -f "dangling=true" -q --no-tru
 function go_bin {
     "$(go env GOPATH)/bin/${1}"
 }
+function ltunify_access {
+    location="/dev/hidraw${1}";
+    sudo chgrp "${USER}" "${location}" && sudo chmod g+rw "${location}"
+}
 
 # python 3.7 access
 alias py37='python3.7'
