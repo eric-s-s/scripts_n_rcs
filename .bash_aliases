@@ -50,6 +50,11 @@ function is_input_enabled {
     [ "$(xinput list $1 | grep disabled)" ] && echo disabled || echo enabled
 }
 
+function get_xinput_id {
+    id="$(xinput | grep "${1}" | sed -e 's/.*id=\([0-9]\{,2\}\).*/\1/g')"
+    echo "${id}"
+}
+
 function list_inputs {
     touch_screen="ELAN Touchscreen"
     touch_pad="Elantech Touchpad"
@@ -63,7 +68,7 @@ function list_inputs {
     done
         
     for el in "${elements[@]}"; do
-        id="$(xinput | grep "${el}" | sed -e 's/\(.*id=\)\([0-9]\{,2\}\).*/\2/g')"
+        id="$(get_xinput_id ${el})"
         state="$(is_input_enabled $id)"
         printf "%-${rjust}s : id: ${id} state: ${state}\n" "${el}"
     done
