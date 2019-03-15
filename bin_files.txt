@@ -1,4 +1,5 @@
 color_record.sh
+from_https_to_ssh.sh
 reset_printer.sh
 show_ls_colors.sh
 startup.sh
