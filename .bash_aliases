@@ -1,6 +1,6 @@
 # from original .bashrc file
 # some more ls aliases
-alias ll='ls -AlF'
+alias ll='ls -AlFtr'
 alias la='ls -A'
 alias l='ls -CF'
 
@@ -35,6 +35,11 @@ function go_bin {
 function ltunify_access {
     location="/dev/hidraw${1}";
     sudo chgrp "${USER}" "${location}" && sudo chmod g+rw "${location}"
+}
+
+function remount_as_read_only {
+    udisksctl unmount -b /dev/sdb1
+    udisksctl mount -o ro -b /dev/sdb1
 }
 
 # python 3.7 access
