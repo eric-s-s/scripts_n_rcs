@@ -49,6 +49,7 @@ alias venv37='python3.7 -m venv'
 
 alias wide_view='printf "\033[8;40;200t"'
 alias regular_view='printf "\033[8;40;120t"'
+alias default_view='printf "\e[8;24;88t"'
 
 # laptop input controls
 function is_input_enabled {
