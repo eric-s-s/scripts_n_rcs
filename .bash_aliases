@@ -47,9 +47,20 @@ alias py37='python3.7'
 alias pip37='python3.7 -m pip'
 alias venv37='python3.7 -m venv'
 
+# alternate venv functions here as notes
+
+# function venv35 {
+#         virtualenv -p "$(which python3.5)" "{$1}"
+# }
+#
+# function venv37 {
+#         virtualenv -p "$(which python3.7)" "{$1}"
+# }
+
 alias wide_view='printf "\033[8;40;200t"'
 alias regular_view='printf "\033[8;40;120t"'
 alias default_view='printf "\e[8;24;88t"'
+
 
 # laptop input controls
 function is_input_enabled {
