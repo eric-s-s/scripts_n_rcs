@@ -4,3 +4,4 @@ reset_printer.sh
 show_ls_colors.sh
 startup.sh
 tree_with_file.sh
+improved_sbt_test.sh
