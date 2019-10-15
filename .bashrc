@@ -1,19 +1,9 @@
+# ~/.bashrc: executed by bash(1) for non-login shells.
+# see /usr/share/doc/bash/examples/startup-files (in the package bash-doc)
+# for examples
 
-PATH=$PATH:/home/eric/bin:/snap/bin
-
-# set PATH to include go as per go instructions
-PATH="$PATH:/usr/local/go/bin"
-
-GOPATH=$(go env GOPATH)
-
-# and now gradle
-PATH="$PATH:/opt/gradle/gradle-4.10.2/bin"
-
-# added by nvm on installation
-export NVM_DIR="$HOME/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
-[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
-
+# If not running interactively, don't do anything
+[ -z "$PS1" ] && return
 
 # don't put duplicate lines or lines starting with space in the history.
 # See bash(1) for more options
@@ -30,10 +20,12 @@ HISTFILESIZE=2000
 # update the values of LINES and COLUMNS.
 shopt -s checkwinsize
 
+# If set, the pattern "**" used in a pathname expansion context will
+# match all files and zero or more directories and subdirectories.
+#shopt -s globstar
 
 # make less more friendly for non-text input files, see lesspipe(1)
 [ -x /usr/bin/lesspipe ] && eval "$(SHELL=/bin/sh lesspipe)"
-
 
 # git branch display
 parse_git_branch() {
@@ -63,8 +55,12 @@ BG_GREEN_FONT_RED="42;31"
 LS_COLORS="${LS_COLORS}ow=${BG_GREEN_FONT_RED}:"; export LS_COLORS
 
 
+
 . ~/.bash_aliases
 
+# enable programmable completion features (you don't need to enable
+# this, if it's already enabled in /etc/bash.bashrc and /etc/profile
+# sources /etc/bash.bashrc).
 if ! shopt -oq posix; then
   if [ -f /usr/share/bash-completion/bash_completion ]; then
     . /usr/share/bash-completion/bash_completion
@@ -73,3 +69,23 @@ if ! shopt -oq posix; then
   fi
 fi
 
+if [ -d $HOME/.bash.d ]; then
+    for shfile in $HOME/.bash.d/*; do
+        case $shfile in
+            "$HOME/.bash.d/*") : ;;
+            *) source $shfile;;
+        esac
+    done
+fi
+
+
+[ -f ~/.quantumrc ] && source ~/.quantumrc
+
+export WORKSPACE="$HOME/workspace"
+
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && source "$NVM_DIR/nvm.sh" --no-use
+
+#THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
+export SDKMAN_DIR="/home/eric.shaw/.sdkman"
+[[ -s "/home/eric.shaw/.sdkman/bin/sdkman-init.sh" ]] && source "/home/eric.shaw/.sdkman/bin/sdkman-init.sh"
