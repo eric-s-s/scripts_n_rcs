@@ -2,6 +2,11 @@
 # see /usr/share/doc/bash/examples/startup-files (in the package bash-doc)
 # for examples
 
+
+# export PYTHONPATH=$PYTHONPATH:/home/eric.shaw/workspace/DataRobot
+# exporting pythonpath did a weird thing with my imports and venvs. 
+# specifically: cd dr_workspace/jenkins-jobs;workon jjb;./builder testupdate THING
+
 # If not running interactively, don't do anything
 [ -z "$PS1" ] && return
 
@@ -89,3 +94,4 @@ export NVM_DIR="$HOME/.nvm"
 #THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
 export SDKMAN_DIR="/home/eric.shaw/.sdkman"
 [[ -s "/home/eric.shaw/.sdkman/bin/sdkman-init.sh" ]] && source "/home/eric.shaw/.sdkman/bin/sdkman-init.sh"
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
