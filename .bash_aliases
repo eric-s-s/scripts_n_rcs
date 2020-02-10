@@ -56,8 +56,3 @@ alias long_view='printf "\e[8;24;140t"'
 
 alias edit_eric_sudo='sudo visudo -f /etc/sudoers.d/eric'
 
-function mv_pip_config {
-    pip_conf=".pip/pip.conf"
-    not_pip_conf=".pip/not.pip.conf"
-    [[ -e "${HOME}/${pip_conf}" ]] && mv "${HOME}/${pip_conf}" "${HOME}/${not_pip_conf}" ||  mv "${HOME}/${not_pip_conf}" "${HOME}/${pip_conf}" 
-}
