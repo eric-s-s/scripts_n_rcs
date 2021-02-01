@@ -1,0 +1,21 @@
+SNAP
+
+
+Name               Version          Rev    Tracking         Publisher       Notes
+code               ea3859d4         52     latest/stable    vscode*         classic
+core               16-2.48.2        10583  latest/stable    canonical*      core
+core18             20201210         1944   latest/stable    canonical*      base
+gnome-3-26-1604    3.26.0.20200529  100    latest/stable/…  canonical*      -
+gtk-common-themes  0.1-50-gf7627e4  1514   latest/stable    canonical*      -
+keepassxc          2.6.4            1309   latest/stable    keepassxreboot  -
+postman            7.36.3           131    latest/stable    postman-inc*    -
+snapd              2.48.2           10707  latest/stable    canonical*      snapd
+
+OTHER
+
+pgcli
+intellij package manager tool
+
+
+
+
