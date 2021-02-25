@@ -16,6 +16,6 @@ OTHER
 pgcli
 intellij package manager tool
 
-
+sudo apt install meld # a nice diff tool
 
 
