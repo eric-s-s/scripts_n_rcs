@@ -15,6 +15,8 @@ OTHER
 
 pgcli
 intellij package manager tool
+peek - animated gif tool
+simplescreenrecorder - screen casting tool
 
 sudo apt install meld # a nice diff tool
 
