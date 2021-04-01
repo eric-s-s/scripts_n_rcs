@@ -35,6 +35,9 @@ function remount_as_read_only {
     udisksctl mount -o ro -b /dev/sdb1
 }
 
+function merge-base-diff {
+    git diff "$(git merge-base master "${1}")" "${1}"
+}
 
 # venv access
 function venv35 {
@@ -43,6 +46,14 @@ function venv35 {
 
 function venv37 {
         virtualenv -p "$(which python3.7)" "${1}"
+}
+
+function venv38 {
+        virtualenv -p "$(which python3.8)" "${1}"
+}
+
+function venv27 {
+        virtualenv -p "$(which python)" "${1}"
 }
 
 # python 3.7 access
@@ -55,4 +66,8 @@ alias long_view='printf "\e[8;24;140t"'
 
 
 alias edit_eric_sudo='sudo visudo -f /etc/sudoers.d/eric'
+
+function set-title {
+    PS1="$(echo $PS1 | sed -e "s/\(\[\\\e\]0;\).*\(\\\a\)/\1${1}\2/") "
+}
 

@@ -59,6 +59,8 @@ alias egrep='egrep --color=auto'
 BG_GREEN_FONT_RED="42;31"
 LS_COLORS="${LS_COLORS}ow=${BG_GREEN_FONT_RED}:"; export LS_COLORS
 
+# stops the damn alert if you hit tab with too many choices, etc
+bind 'set bell-style none'
 
 
 . ~/.bash_aliases
