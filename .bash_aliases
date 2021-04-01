@@ -68,6 +68,6 @@ alias long_view='printf "\e[8;24;140t"'
 alias edit_eric_sudo='sudo visudo -f /etc/sudoers.d/eric'
 
 function set-title {
-    PS1="$(echo $PS1 | sed -e "s/\(\[\\\e\]0;\).*\(\\\a\)/\1${1}\2/") "
+    PS1="$(echo $PS1 | sed -E "s/(\\\e]0;).*(\\\a)/\1${1}\2/") "
 }
 
