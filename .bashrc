@@ -86,6 +86,9 @@ if [ -d $HOME/.bash.d ]; then
 fi
 
 
+# kubectl bash completion
+source <(kubectl completion bash)
+
 [ -f ~/.quantumrc ] && source ~/.quantumrc
 
 export WORKSPACE="$HOME/workspace"
