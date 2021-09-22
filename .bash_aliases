@@ -36,8 +36,18 @@ function remount_as_read_only {
 }
 
 function merge-base-diff {
-    git diff "$(git merge-base master "${1}")" "${1}"
+    main_branch="master"
+    if [ -z "$(git branch | grep "${main_branch}")" ]; then
+        main_branch="main"
+    fi
+    git diff "$(git merge-base ${main_branch} "${1}")" "${1}"
 }
+
+function diff-with-main {
+    current_sha="$(git log -n 1 --format=%H)" 
+    merge-base-diff "${current_sha}"
+}
+
 
 # venv access
 function venv35 {

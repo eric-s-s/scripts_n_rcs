@@ -1,3 +1,4 @@
+#safe-reset-resolv
 
 sudo apt update
 sudo apt upgrade
