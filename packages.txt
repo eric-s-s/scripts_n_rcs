@@ -2,14 +2,17 @@ SNAP
 
 
 Name               Version          Rev    Tracking         Publisher       Notes
-code               ea3859d4         52     latest/stable    vscode*         classic
-core               16-2.48.2        10583  latest/stable    canonical*      core
-core18             20201210         1944   latest/stable    canonical*      base
-gnome-3-26-1604    3.26.0.20200529  100    latest/stable/…  canonical*      -
-gtk-common-themes  0.1-50-gf7627e4  1514   latest/stable    canonical*      -
-keepassxc          2.6.4            1309   latest/stable    keepassxreboot  -
-postman            7.36.3           131    latest/stable    postman-inc*    -
-snapd              2.48.2           10707  latest/stable    canonical*      snapd
+bare               1.0              5      latest/stable    canonical*      base
+core               16-2.51.4        11606  latest/stable    canonical*      core
+core18             20210722         2128   latest/stable    canonical*      base
+core20             20210702         1081   latest/stable    canonical*      base
+gnome-3-26-1604    3.26.0.20210629  104    latest/stable/…  canonical*      -
+gtk-common-themes  0.1-59-g7bca6ae  1519   latest/stable    canonical*      -
+keepassxc          2.6.6            1522   latest/stable    keepassxreboot  -
+postman            7.36.5           133    latest/stable    postman-inc*    -
+snapd              2.51.7           13170  latest/stable    canonical*      snapd
+vidcutter          6.0.5.1          58     latest/stable    ozmartian       -
+
 
 OTHER
 
@@ -19,5 +22,4 @@ peek - animated gif tool
 simplescreenrecorder - screen casting tool
 
 sudo apt install meld # a nice diff tool
-
 
