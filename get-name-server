@@ -1,0 +1,2 @@
+systemd-resolve --status | grep -A 5 -i "dns servers:"
+

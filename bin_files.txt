@@ -10,3 +10,11 @@ improved_sbt_test.sh
 mv_pip_config.sh
 switch_public_private.sh
 restart-gp.sh
+total 11580
+improved_sbt_test.sh
+restart-gp.sh
+reset-resolv
+zram-swap
+install-code
+safe-reset-resolv
+get-name-server

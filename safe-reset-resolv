@@ -1,0 +1,16 @@
+
+if grep -E "10(\.[0-9]+){3}" /etc/resolv.conf; then
+    echo "not resetting resolv";
+    cat /etc/resolv.conf
+
+else
+#    echo "resetting resolve"
+#    ~/bin/reset-resolv
+    set -ex
+    echo "redoing symlink"
+    sudo rm -f /etc/resolv.conf
+    sudo ln -s /run/systemd/resolve/resolv.conf /etc/resolv.conf
+    set +ex
+fi
+
+
