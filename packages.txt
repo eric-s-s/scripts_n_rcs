@@ -23,3 +23,4 @@ simplescreenrecorder - screen casting tool
 
 sudo apt install meld # a nice diff tool
 
+sudo apt-get kdenlive  # video editor
