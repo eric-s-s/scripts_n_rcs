@@ -17,6 +17,7 @@ vidcutter          6.0.5.1          58     latest/stable    ozmartian       -
 OTHER
 
 pgcli
+mongo-db compass  
 intellij package manager tool
 peek - animated gif tool
 simplescreenrecorder - screen casting tool
@@ -24,3 +25,9 @@ simplescreenrecorder - screen casting tool
 sudo apt install meld # a nice diff tool
 
 sudo apt-get kdenlive  # video editor
+
+https://github.com/derailed/k9s
+curl -sS https://webinstall.dev/k9s | bash
+
+
+
