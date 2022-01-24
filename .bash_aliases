@@ -65,6 +65,10 @@ function venv38 {
 function venv27 {
         virtualenv -p "$(which python)" "${1}"
 }
+function venv-latest {
+        virtualenv -p "$(which python3.10)" "${1}"
+}
+
 
 # python 3.7 access
 alias py37='python3.7'
@@ -86,4 +90,10 @@ alias clip="xclip -selection c"
 function gp_portal() {
         echo "dr-prismaaccess.gpcloudservice.com" | clip
 }
+
+function convert-to-ip-addr {
+   echo "${1}" | sed -E "s/-/./g"
+}
+
+alias report-disk-usage="du -ha ~/. | sort -rh > ~/usage.txt"
 
