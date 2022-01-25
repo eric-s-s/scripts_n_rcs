@@ -14,5 +14,9 @@ done
 
 declare -a all_files=(`cat bin_files.txt home_files.txt`)
 
+touch dr-repos.sh
+chmod 774 dr-repos.sh
+ls ~/dr_workspace/ | sed -e "s/\(.*\)/git clone git@github.com:datarobot\/\1.git/" > dr-repos.sh
+
 # TODO check for files to be removed.  include this file
 # TODO include bin_files.txt, home_files.txt, README.md use git rm?

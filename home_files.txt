@@ -1,3 +1,4 @@
+.profile
 .bash_aliases
 .bashrc
 .inputrc
