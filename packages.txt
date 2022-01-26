@@ -11,7 +11,6 @@ gtk-common-themes  0.1-59-g7bca6ae  1519   latest/stable    canonical*      -
 keepassxc          2.6.6            1522   latest/stable    keepassxreboot  -
 postman            7.36.5           133    latest/stable    postman-inc*    -
 snapd              2.51.7           13170  latest/stable    canonical*      snapd
-vidcutter          6.0.5.1          58     latest/stable    ozmartian       -
 
 
 OTHER
@@ -19,12 +18,21 @@ OTHER
 pgcli
 mongo-db compass  
 intellij package manager tool
-peek - animated gif tool
-simplescreenrecorder - screen casting tool
+vscode is download deb and then `dpkg -i <deb file>`
+
+https://docs.aws.amazon.com/cli/latest/userguide/getting-started-install.html # awscli
+
+https://docs.aws.amazon.com/eks/latest/userguide/eksctl.html #aws eksctl
+
+sudo apt install jq # json query tool
+
+sudo apt install peek # animated gif tool
+
+sudo apt install simplescreenrecorder # screen casting tool
 
 sudo apt install meld # a nice diff tool
 
-sudo apt-get kdenlive  # video editor
+sudo apt install kdenlive  # video editor
 
 https://github.com/derailed/k9s
 curl -sS https://webinstall.dev/k9s | bash
