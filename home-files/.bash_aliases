@@ -66,7 +66,7 @@ function venv27 {
         virtualenv -p "$(which python)" "${1}"
 }
 function venv-latest {
-        virtualenv -p "$(which python3.10)" "${1}"
+        PYENV_VERSION=3.10.2 virtualenv -p "$(which python)" "${1}"
 }
 
 

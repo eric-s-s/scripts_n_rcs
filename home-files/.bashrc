@@ -105,3 +105,4 @@ export SDKMAN_DIR="/home/eric.shaw/.sdkman"
 [ -s "$HOME/.config/envman/load.sh" ] && source "$HOME/.config/envman/load.sh"
 
 eval "$(pyenv init -)"
+eval "$(pyenv virtualenv-init -)"

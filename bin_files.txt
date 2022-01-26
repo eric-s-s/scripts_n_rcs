@@ -1,5 +1,4 @@
 disable_touch_pad.sh
-disable_inputs.sh
 color_record.sh
 from_https_to_ssh.sh
 reset_printer.sh

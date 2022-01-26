@@ -9,6 +9,7 @@ set tabstop=4
 set shiftwidth=4
 set expandtab
 
+set noerrorbells visualbell t_vb=
 
 set titlestring=\VIM\ \ %t\ \@\ \%(\ (%{expand(\"%:p:h\")})%)
 set title
