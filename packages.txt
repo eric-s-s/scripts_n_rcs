@@ -8,7 +8,6 @@ core18             20210722         2128   latest/stable    canonical*      base
 core20             20210702         1081   latest/stable    canonical*      base
 gnome-3-26-1604    3.26.0.20210629  104    latest/stable/…  canonical*      -
 gtk-common-themes  0.1-59-g7bca6ae  1519   latest/stable    canonical*      -
-keepassxc          2.6.6            1522   latest/stable    keepassxreboot  -
 postman            7.36.5           133    latest/stable    postman-inc*    -
 snapd              2.51.7           13170  latest/stable    canonical*      snapd
 
@@ -17,9 +16,10 @@ OTHER
 
 pgcli
 mongo-db compass  
-intellij package manager tool
 vscode is download deb and then `dpkg -i <deb file>`
 
+https://1password.com/downloads/linux/  # 1password
+https://www.jetbrains.com/toolbox-app/ # jetbrains toolbox
 https://docs.aws.amazon.com/cli/latest/userguide/getting-started-install.html # awscli
 
 https://docs.aws.amazon.com/eks/latest/userguide/eksctl.html #aws eksctl

@@ -49,29 +49,12 @@ function diff-with-main {
 }
 
 
-# venv access
-function venv35 {
-        virtualenv -p "$(which python3.5)" "${1}"
+
+function invoke-python () {
+    location=$(echo "${1/\.py/}" | sed -e "s/\//./g") 
+    python -m $location
 }
 
-function venv37 {
-        virtualenv -p "$(which python3.7)" "${1}"
-}
-
-function venv38 {
-        virtualenv -p "$(which python3.8)" "${1}"
-}
-
-function venv27 {
-        virtualenv -p "$(which python)" "${1}"
-}
-function venv-latest {
-        PYENV_VERSION=3.10.2 virtualenv -p "$(which python)" "${1}"
-}
-
-
-# python 3.7 access
-alias py37='python3.7'
 
 # random stuff
 alias wide_view='printf "\033[8;40;160t"'
