@@ -49,12 +49,7 @@ function diff-with-main {
 }
 
 
-
-function invoke-python () {
-    location=$(echo "${1/\.py/}" | sed -e "s/\//./g") 
-    python -m $location
-}
-
+alias invoke-python='PYTHON_PATH="$(pwd)" python'
 
 # random stuff
 alias wide_view='printf "\033[8;40;160t"'
@@ -62,14 +57,12 @@ alias regular_view='printf "\033[8;40;120t"'
 alias default_view='printf "\e[8;24;88t"'
 alias long_view='printf "\e[8;24;140t"'
 
+alias latest-bje='kubectl get pods -A | grep bje |tail -1 | awk "{print \"-n \" \$1, \$2 }"'
 
 alias edit_eric_sudo='sudo visudo -f /etc/sudoers.d/eric'
 
-function set-title {
-    PS1="$(echo $PS1 | sed -E "s/(\\\e]0;).*(\\\a)/\1${1}\2/") "
-}
-
 alias clip="xclip -selection c"
+
 function gp_portal() {
         echo "dr-prismaaccess.gpcloudservice.com" | clip
 }

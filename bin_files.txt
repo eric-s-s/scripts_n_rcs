@@ -16,3 +16,4 @@ zram-swap
 install-code
 safe-reset-resolv
 get-name-server
+udate.sh
