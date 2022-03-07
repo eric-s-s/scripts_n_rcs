@@ -1,0 +1,79 @@
+#!/usr/bin/env bash
+# Zram-swap automatically compresses half of ram for swap usage
+# Copyright (C)  2021  Aaron Ball <nullspoon@oper.io>
+#
+# This program is free software: you can redistribute it and/or modify
+# it under the terms of the GNU General Public License as published by
+# the Free Software Foundation, either version 3 of the License, or
+# (at your option) any later version.
+#
+# This program is distributed in the hope that it will be useful,
+# but WITHOUT ANY WARRANTY; without even the implied warranty of
+# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+# GNU General Public License for more details.
+#
+# You should have received a copy of the GNU General Public License
+# along with this program.  If not, see <http://www.gnu.org/licenses/>.
+
+set -exuo pipefail
+export IFS=$'\n\t'
+
+RUNFILE='/var/run/zram-swap'
+MEMTOTAL=$(sed -n 's/^MemTotal: \+\([0-9]\+\) kB/\1/p' /proc/meminfo)
+
+status() {
+  if [ -f "${RUNFILE}" ]; then
+    zramctl $(cat "${RUNFILE}")
+  else
+    printf 'stopped\n'
+  fi
+}
+
+start() {
+  [ $(status) != 'stopped' ] && printf 'Already running\n' && return 1
+
+  local unused="$(zramctl -f)"
+  # Size is 1/2 of total memory
+  local size="$(( MEMTOTAL / 1024 / 2 ))M"
+  # Thread count is half of cpu
+  local threads="$(( $(nproc) / 2 ))"
+
+  # Create the zram device
+  zramctl "${unused}" -s "${size}" -t "${threads}"
+  mkswap "${unused}"
+  swapon "${unused}"
+  printf '%s\n' "${unused}" > "${RUNFILE}"
+}
+
+stop() {
+  [ $(status) = 'stopped' ] && printf 'Already stopped\n' && return 1
+  local zram="$(cat ${RUNFILE})"
+  swapoff ${zram}
+  zramctl -r "${zram}"
+  rm -f "${RUNFILE}"
+  # Note: We do not want to try to remove the zram kernel module in case other
+  # devices are in use.
+}
+
+main() {
+  if [ ${UID} -ne 0 ]; then
+    printf 'Must be run as root\n' >&2
+    return 1
+  fi
+
+  # Make sure the zram module is loaded
+  modprobe zram
+
+  if [ "${1:-}" = 'start' ]; then
+    start
+  elif [ "${1:-}" = 'stop' ]; then
+    stop
+  elif [ "${1:-}" = 'status' ]; then
+    status
+  else
+    printf 'usage: %s [start|stop|status]\n' "${0}"
+    exit 1
+  fi
+}
+
+main ${@}
