@@ -4,5 +4,5 @@ sudo apt update
 sudo apt upgrade
 
 
-disable_touch_pad.sh
+disable-touch-pad-and-buttons.sh
 

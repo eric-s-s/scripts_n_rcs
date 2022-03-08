@@ -34,6 +34,9 @@ sudo apt install meld # a nice diff tool
 
 sudo apt install kdenlive  # video editor
 
+sudo apt install gnome-tweak-tool # turn off middle mouse paste with 
+    # gsettings set org.gnome.desktop.interface gtk-enable-primary-paste false
+
 https://github.com/derailed/k9s
 curl -sS https://webinstall.dev/k9s | bash
 
