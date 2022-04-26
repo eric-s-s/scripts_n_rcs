@@ -73,3 +73,11 @@ function convert-to-ip-addr {
 
 alias report-disk-usage="du -ha ~/. | sort -rh > ~/usage.txt"
 
+function eval-mongo() {
+    uri=$1
+    db=$2
+    cmd=$3
+    mongo $uri --eval "JSON.stringify(db.getSiblingDB('${db}').${cmd})" | grep "^{" | jq .
+}
+
+
