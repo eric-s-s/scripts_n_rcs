@@ -1,6 +1,6 @@
 
 cat home_files.txt | xargs -I{} cp ~/{} home-files
-cat bin_files.txt | xargs -I{} cp ~/bin/{} bin-files
+ls ~/bin | xargs -I{} cp ~/bin/{} bin-files
 
 
 touch dr-repos.sh
