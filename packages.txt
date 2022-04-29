@@ -24,6 +24,8 @@ https://docs.aws.amazon.com/cli/latest/userguide/getting-started-install.html # 
 
 https://docs.aws.amazon.com/eks/latest/userguide/eksctl.html #aws eksctl
 
+sudo apt install tree # nice directory display
+
 sudo apt install jq # json query tool
 
 sudo apt install peek # animated gif tool
