@@ -49,7 +49,13 @@ function diff-with-main {
 }
 
 
-alias invoke-python='PYTHON_PATH="$(pwd)" python'
+alias invoke-python='PYTHONPATH="$(pwd)" python'
+function invoke-python-module {
+    # use when main.py is not top-level. see
+    # https://stackoverflow.com/a/65021331/7264269 in
+    # https://stackoverflow.com/questions/50745094/modulenotfounderror-when-running-script-from-terminal
+    python -m "$(sed -e 's/\//./g' -e 's/\.py$//' <<< $1)"
+}
 
 # random stuff
 alias wide_view='printf "\033[8;40;160t"'
