@@ -21,6 +21,6 @@ printf "\ndisabling touch pad\n\n"
 xinput --disable $touch_pad
 xinput list $touch_pad | head -2
 
-disable-middle-mouse
+#disable-middle-mouse
 
 
