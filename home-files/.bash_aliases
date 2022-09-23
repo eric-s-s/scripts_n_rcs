@@ -40,12 +40,17 @@ function merge-base-diff {
     if [ -z "$(git branch | grep "${main_branch}")" ]; then
         main_branch="main"
     fi
-    git diff "$(git merge-base ${main_branch} "${1}")" "${1}"
+
+    if [ "${2}" = "--name-only"  ]; then
+        git diff --name-only "$(git merge-base ${main_branch} "${1}")" "${1}";
+    else
+        git diff "$(git merge-base ${main_branch} "${1}")" "${1}";
+    fi
 }
 
 function diff-with-main {
     current_sha="$(git log -n 1 --format=%H)" 
-    merge-base-diff "${current_sha}"
+    merge-base-diff "${current_sha}" "${1}"
 }
 
 
