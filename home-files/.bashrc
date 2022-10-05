@@ -93,8 +93,8 @@ source <(kubectl completion bash)
 
 export WORKSPACE="$HOME/workspace"
 
-export NVM_DIR="$HOME/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && source "$NVM_DIR/nvm.sh" --no-use
+export NVM_DIR="$([ -z "${XDG_CONFIG_HOME-}" ] && printf %s "${HOME}/.nvm" || printf %s "${XDG_CONFIG_HOME}/nvm")"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh" # This loads nvm
 
 #THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
 export SDKMAN_DIR="/home/eric.shaw/.sdkman"
@@ -106,3 +106,4 @@ export SDKMAN_DIR="/home/eric.shaw/.sdkman"
 
 eval "$(pyenv init -)"
 eval "$(pyenv virtualenv-init -)"
+
