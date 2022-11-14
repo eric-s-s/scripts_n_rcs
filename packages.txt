@@ -41,6 +41,12 @@ sudo apt install kdenlive  # video editor
 sudo apt install gnome-tweak-tool # turn off middle mouse paste with 
     # gsettings set org.gnome.desktop.interface gtk-enable-primary-paste false
 
+sudo apt install default-jdk
+
+# gradle https://gradle.org/install/
+curl -s "https://get.sdkman.io" | bash
+sdk install gradle 7.5.1
+
 # k9s   https://github.com/derailed/k9s
 curl -sS https://webinstall.dev/k9s | bash
 
