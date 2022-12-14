@@ -1,10 +1,12 @@
 git clone git@github.com:datarobot/adipose.git
 git clone git@github.com:datarobot/admin-guide.git
+git clone git@github.com:datarobot/architecture.git
 git clone git@github.com:datarobot/cicada.git
 git clone git@github.com:datarobot/cloud-docs.git
 git clone git@github.com:datarobot/coding-interview-questions.git
 git clone git@github.com:datarobot/custom-task-stackbot.git
 git clone git@github.com:datarobot/data-prep-devops.git
+git clone git@github.com:datarobot/datarobot-app-charts.git
 git clone git@github.com:datarobot/datarobot-user-models.git
 git clone git@github.com:datarobot/data-science-scripts.git
 git clone git@github.com:datarobot/drcajenkins.git
