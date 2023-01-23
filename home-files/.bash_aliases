@@ -75,6 +75,7 @@ alias edit_eric_sudo='sudo visudo -f /etc/sudoers.d/eric'
 alias clip="xclip -selection c"
 alias clean-clipboard="xclip -select c -o | tr -cd '\11\12\15\40-\176' | xclip -select c -i"
 alias poop-emoji="echo -n '💩' | xclip -selection c -i"
+alias jira-to-clip="xclip -o -sel c | sed 's/.*\///' | xclip -i -sel c"
 
 function gp_portal() {
         echo "dr-prismaaccess.gpcloudservice.com" | clip
