@@ -7,6 +7,10 @@
 # exporting pythonpath did a weird thing with my imports and venvs. 
 # specifically: cd dr_workspace/jenkins-jobs;workon jjb;./builder testupdate THING
 
+# PATH SETTINGS
+export PATH=$PATH:/usr/local/go/bin
+
+
 # If not running interactively, don't do anything
 [ -z "$PS1" ] && return
 
@@ -104,6 +108,11 @@ export SDKMAN_DIR="/home/eric.shaw/.sdkman"
 # Generated for envman. Do not edit.
 [ -s "$HOME/.config/envman/load.sh" ] && source "$HOME/.config/envman/load.sh"
 
+export PYENV_ROOT="$HOME/.pyenv"
+command -v pyenv >/dev/null || export PATH="$PYENV_ROOT/bin:$PATH"
 eval "$(pyenv init -)"
 eval "$(pyenv virtualenv-init -)"
+
+# AWS CLI bash completion
+complete -C '/usr/local/bin/aws_completer' aws
 

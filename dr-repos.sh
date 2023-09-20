@@ -8,7 +8,6 @@ git clone git@github.com:datarobot/custom-task-stackbot.git
 git clone git@github.com:datarobot/data-prep-devops.git
 git clone git@github.com:datarobot/datarobot-app-charts.git
 git clone git@github.com:datarobot/datarobot-user-models.git
-git clone git@github.com:datarobot/data-science-scripts.git
 git clone git@github.com:datarobot/drcajenkins.git
 git clone git@github.com:datarobot/drlayout.git
 git clone git@github.com:datarobot/dr-usertool.git
@@ -20,3 +19,4 @@ git clone git@github.com:datarobot/mlops-scripts.git
 git clone git@github.com:datarobot/public_api_client.git
 git clone git@github.com:datarobot/stackbot.git
 git clone git@github.com:datarobot/stackbot_blueprints.git
+git clone git@github.com:datarobot/tdd-monthly-mobbing.git

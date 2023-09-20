@@ -67,6 +67,8 @@ alias wide_view='printf "\033[8;40;160t"'
 alias regular_view='printf "\033[8;40;120t"'
 alias default_view='printf "\e[8;24;88t"'
 alias long_view='printf "\e[8;24;140t"'
+alias find-pointer-on='gsettings set org.gnome.desktop.interface locate-pointer true'
+alias find-pointer-off='gsettings set org.gnome.desktop.interface locate-pointer false'
 
 alias latest-bje='kubectl get pods -A | grep bje |tail -1 | awk "{print \"-n \" \$1, \$2 }"'
 
