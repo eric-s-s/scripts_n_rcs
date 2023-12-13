@@ -3,6 +3,7 @@ let mapleader=","
 
 filetype plugin indent on
 
+set hlsearch
 set number
 
 set tabstop=4

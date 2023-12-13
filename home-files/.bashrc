@@ -116,3 +116,4 @@ eval "$(pyenv virtualenv-init -)"
 # AWS CLI bash completion
 complete -C '/usr/local/bin/aws_completer' aws
 
+TZ=America/New_York;export TZ

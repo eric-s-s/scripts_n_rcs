@@ -41,3 +41,4 @@ eval "$(pyenv init -)"
 # Generated for envman. Do not edit.
 [ -s "$HOME/.config/envman/load.sh" ] && source "$HOME/.config/envman/load.sh"
 
+TZ='America/New_York'; export TZ
