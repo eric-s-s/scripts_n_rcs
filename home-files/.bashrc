@@ -8,7 +8,7 @@
 # specifically: cd dr_workspace/jenkins-jobs;workon jjb;./builder testupdate THING
 
 # PATH SETTINGS
-export PATH=$PATH:/usr/local/go/bin
+export PATH=$PATH:/usr/local/go/bin:/$HOME/go/bin
 
 
 # If not running interactively, don't do anything
