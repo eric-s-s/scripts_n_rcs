@@ -108,4 +108,8 @@ function eval-mongo() {
     mongo $uri --eval "JSON.stringify(db.getSiblingDB('${db}').${cmd})" | grep "^{" | jq .
 }
 
+function set-aws-profile() {
+    export AWS_PROFILE=$1
+    export KUBECONFIG="${HOME}/kubeconfigs/aws-${1}"
+}
 

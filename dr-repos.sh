@@ -21,6 +21,7 @@ git clone git@github.com:datarobot/mlops_infrastructure.git
 git clone git@github.com:datarobot/mlops-scripts.git
 git clone git@github.com:datarobot/ocr-service.git
 git clone git@github.com:datarobot/public_api_client.git
+git clone git@github.com:datarobot/sdtk.git
 git clone git@github.com:datarobot/service-registry.git
 git clone git@github.com:datarobot/stackbot.git
 git clone git@github.com:datarobot/stackbot_blueprints.git
