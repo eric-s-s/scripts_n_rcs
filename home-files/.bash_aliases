@@ -113,3 +113,11 @@ function set-aws-profile() {
     export KUBECONFIG="${HOME}/kubeconfigs/aws-${1}"
 }
 
+function _set_aws_profile_completions() {
+    local cur_word
+    cur_word="${COMP_WORDS[COMP_CWORD]}"
+    COMPREPLY=( $(compgen -W "$(aws configure list-profiles)" -- "$cur_word") )
+}
+
+complete -F _set_aws_profile_completions set-aws-profile
+

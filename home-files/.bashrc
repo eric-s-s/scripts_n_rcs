@@ -117,3 +117,4 @@ eval "$(pyenv virtualenv-init -)"
 complete -C '/usr/local/bin/aws_completer' aws
 
 TZ=America/New_York;export TZ
+eval "$(uv generate-shell-completion bash)"
