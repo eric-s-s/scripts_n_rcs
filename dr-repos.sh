@@ -3,6 +3,7 @@ git clone git@github.com:datarobot/admin-guide.git
 git clone git@github.com:datarobot/architecture.git
 git clone git@github.com:datarobot/base-images.git
 git clone git@github.com:datarobot/blueprint-workshop.git
+git clone git@github.com:datarobot/chronosphere-infra.git
 git clone git@github.com:datarobot/cicada.git
 git clone git@github.com:datarobot/cloud-docs.git
 git clone git@github.com:datarobot/coding-interview-questions.git
@@ -18,6 +19,7 @@ git clone git@github.com:datarobot/harness-infra.git
 git clone git@github.com:datarobot/jenkins-jobs.git
 git clone git@github.com:datarobot/lab-machines.git
 git clone git@github.com:datarobot/logs.txt.git
+git clone git@github.com:datarobot/mcp_server_for_datarobot.git
 git clone git@github.com:datarobot/mldev-observability.git
 git clone git@github.com:datarobot/mldev-scripts.git
 git clone git@github.com:datarobot/mlops_infrastructure.git

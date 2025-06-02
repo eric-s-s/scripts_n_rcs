@@ -70,8 +70,6 @@ alias long_view='printf "\e[8;24;140t"'
 alias find-pointer-on='gsettings set org.gnome.desktop.interface locate-pointer true'
 alias find-pointer-off='gsettings set org.gnome.desktop.interface locate-pointer false'
 
-alias latest-bje='kubectl get pods -A | grep bje |tail -1 | awk "{print \"-n \" \$1, \$2 }"'
-
 alias edit_eric_sudo='sudo visudo -f /etc/sudoers.d/eric'
 
 alias clip="xclip -selection c"
@@ -112,12 +110,17 @@ function set-aws-profile() {
     export AWS_PROFILE=$1
     export KUBECONFIG="${HOME}/kubeconfigs/aws-${1}"
 }
-
 function _set_aws_profile_completions() {
     local cur_word
     cur_word="${COMP_WORDS[COMP_CWORD]}"
     COMPREPLY=( $(compgen -W "$(aws configure list-profiles)" -- "$cur_word") )
 }
-
 complete -F _set_aws_profile_completions set-aws-profile
 
+function kill-with-fire() {
+    if [[ -z $1 ]]; then
+        echo "must provide grep string"
+    else;
+        ps -aux | grep $1 | awk '{print $2}' | xargs kill -9
+    fi
+}
