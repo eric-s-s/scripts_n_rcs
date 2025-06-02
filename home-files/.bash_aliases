@@ -120,7 +120,7 @@ complete -F _set_aws_profile_completions set-aws-profile
 function kill-with-fire() {
     if [[ -z $1 ]]; then
         echo "must provide grep string"
-    else;
+    else
         ps -aux | grep $1 | awk '{print $2}' | xargs kill -9
     fi
 }
