@@ -1,6 +1,6 @@
 
 cat home_files.txt | xargs -I{} cp ~/{} home-files
-ls ~/bin | grep -v "jetbrains" | xargs -I{} cp ~/bin/{} bin-files
+ls ~/bin | grep -v "\(jetbrains\|oc\)" | xargs -I{} cp ~/bin/{} bin-files
 
 
 touch dr-repos.sh
