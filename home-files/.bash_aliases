@@ -76,6 +76,15 @@ alias clip="xclip -selection c"
 alias clean-clipboard="xclip -select c -o | tr -cd '\11\12\15\40-\176' | xclip -select c -i"
 alias poop-emoji="echo -n '💩' | xclip -selection c -i"
 alias jira-to-clip="xclip -o -sel c | sed 's/.*\///' | xclip -i -sel c"
+alias file-size="numfmt --to=iec --format=\"%.2f\""
+
+function clean-dir() {
+    if [[ -z $1 ]]; then
+        echo "must supply a directory path"
+    else
+        rm -rf $1; mkdir $1
+    fi
+}
 
 function branch-from-jira() {
     git checkout -b "eric-s-s/$(basename ${1})/${2}"
@@ -123,4 +132,14 @@ function kill-with-fire() {
     else
         ps -aux | grep $1 | awk '{print $2}' | xargs kill -9
     fi
+}
+
+function repo-grep-replace() {
+    if [[ -z $1 || -z $2 ]]; then
+        echo "must provide find and replace strings";
+        return 1;
+    fi
+
+    git grep --name-only "${1}" | xargs sed -i "s/${1}/${2}/g"
+
 }
