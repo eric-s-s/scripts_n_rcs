@@ -14,11 +14,11 @@ function disable-middle-mouse() {
 
 
 
-touch_pad="$(get_xinput_id 'SynPS/2 Synaptics TouchPad')"
+touch_pad="$(get_xinput_id 'Touchpad')"
 
 
-printf "\ndisabling touch pad\n\n"
-xinput --disable $touch_pad
+printf "\ndisabling touch pad - id: ${touch_pad}\n\n"
+xinput disable $touch_pad
 xinput list $touch_pad | head -2
 
 #disable-middle-mouse

@@ -10,6 +10,7 @@ gnome-3-26-1604    3.26.0.20210629  104    latest/stable/…  canonical*      -
 gtk-common-themes  0.1-59-g7bca6ae  1519   latest/stable    canonical*      -
 postman            7.36.5           133    latest/stable    postman-inc*    -
 snapd              2.51.7           13170  latest/stable    canonical*      snapd
+yq                 v4.49.2          2759   latest/stable    mikefarah       -
 
 
 OTHER
@@ -64,9 +65,6 @@ chmod 700 get_helm.sh
 
 # pyenv   https://github.com/pyenv/pyenv#basic-github-checkout
 git clone https://github.com/pyenv/pyenv.git ~/.pyenv
-# pyenv-venv too!
-# https://github.com/pyenv/pyenv-virtualenv
-git clone https://github.com/pyenv/pyenv-virtualenv.git $(pyenv root)/plugins/pyenv-virtualenv
 
 # tldr.sh
 # https://tldr.sh/
