@@ -63,12 +63,6 @@ curl -fsSL -o get_helm.sh https://raw.githubusercontent.com/helm/helm/main/scrip
 chmod 700 get_helm.sh
 ./get_helm.sh
 
-# pyenv   https://github.com/pyenv/pyenv#basic-github-checkout
-git clone https://github.com/pyenv/pyenv.git ~/.pyenv
-
-# tldr.sh
-# https://tldr.sh/
-npm install -g tldr
 
 # nvm node version manager
 # https://github.com/nvm-sh/nvm
