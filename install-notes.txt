@@ -1,0 +1,43 @@
+1password
+    https://support.1password.com/install-linux/#debian-or-ubuntu
+
+sudo visudo
+    user.name ALL = (ALL) NOPASSWD: ALL
+
+
+apt-get install git
+    https://docs.github.com/en/authentication/connecting-to-github-with-ssh
+
+    eric-shaw:~ $ git config -l
+    user.email=eric.shaw@datarobot.com
+    user.name=Eric Shaw
+    push.autosetupremote=true
+
+    then install git lfs
+pyenv
+    https://github.com/pyenv/pyenv?tab=readme-ov-file#a-getting-pyenv
+    https://github.com/pyenv/pyenv/wiki#suggested-build-environment
+
+    curl -fsSL https://pyenv.run | bash
+
+    sudo apt update; sudo apt install make build-essential libssl-dev zlib1g-dev \
+    libbz2-dev libreadline-dev libsqlite3-dev curl git \
+    libncursesw5-dev xz-utils tk-dev libxml2-dev libxmlsec1-dev libffi-dev liblzma-dev
+
+    pyenv install 3.<autocomplete>
+    pyenv global
+
+pipx
+
+    https://github.com/pypa/pipx?tab=readme-ov-file#on-linux
+
+    python3 -m pip install --user pipx
+    python3 -m pipx ensurepath
+
+    **note** if you just do the command `pipx` then it will error with missing --global. it's fine!    
+
+pipx install
+    poetry
+    tldr
+    
+
