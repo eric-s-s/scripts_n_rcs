@@ -8,7 +8,7 @@
 # specifically: cd dr_workspace/jenkins-jobs;workon jjb;./builder testupdate THING
 
 # PATH SETTINGS
-export PATH=$PATH:/usr/local/go/bin:/$HOME/go/bin
+export PATH="$PATH:/usr/local/go/bin:/$HOME/go/bin:/$HOME/bin:/$HOME/.local/bin"
 
 
 # If not running interactively, don't do anything
@@ -121,3 +121,4 @@ eval "$(uv generate-shell-completion bash)"
 
 # add Pulumi to the PATH
 export PATH=$PATH:/home/eric.shaw/.pulumi/bin
+

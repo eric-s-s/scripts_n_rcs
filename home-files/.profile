@@ -42,3 +42,6 @@ eval "$(pyenv init -)"
 [ -s "$HOME/.config/envman/load.sh" ] && source "$HOME/.config/envman/load.sh"
 
 TZ='America/New_York'; export TZ
+
+# Created by `pipx` on 2026-03-14 01:33:13
+export PATH="$PATH:/home/eric-shaw/.local/bin"
