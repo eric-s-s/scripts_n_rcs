@@ -35,7 +35,7 @@ sudo apt install kdenlive  # video editor
 sudo apt install gnome-tweak-tool # turn off middle mouse paste with 
     # gsettings set org.gnome.desktop.interface gtk-enable-primary-paste false
 sudo apt install default-jdk
-sudo apt install gnome-screenshot # simple screen capture add custom shortcut of gnome-screenshot -a -c
+sudo apt install gnome-screenshot # simple screen capture add custom shortcut of "bash -c 'gnome-screenshot -af ~/Pictures/screenshot.png && xclip -sel c -target image/png ~/Pictures/screenshot.png'" because "gnome-screenshot -ac" is wonky
 
 
 
