@@ -8,6 +8,7 @@ sudo visudo
 
 
 apt-get install git
+    sudo apt install xclip
     https://docs.github.com/en/authentication/connecting-to-github-with-ssh
 
     eric-shaw:~ $ git config -l
@@ -29,6 +30,8 @@ pyenv
 
     pyenv install 3.<autocomplete>
     pyenv global
+
+    update .pypirc and .config/pip/pip.conf
 
 pipx
 
