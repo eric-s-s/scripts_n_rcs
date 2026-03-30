@@ -1,5 +1,5 @@
 
-let mapleader=","
+let mapleader=" "
 
 filetype plugin indent on
 
@@ -15,8 +15,8 @@ set noerrorbells visualbell t_vb=
 set titlestring=\VIM\ \ %t\ \@\ \%(\ (%{expand(\"%:p:h\")})%)
 set title
 
-nnoremap <leader><CR> o<Esc>
-nnoremap <leader>\ O<Esc>
+nnoremap <leader>o o<Esc>
+nnoremap <leader>O O<Esc>
 
 " This is specific settings for yaml files and makefiles
 autocmd FileType yaml setlocal ts=2 sts=2 sw=2 expandtab
