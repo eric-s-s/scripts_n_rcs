@@ -23,6 +23,7 @@ sudo dpkg -i <deb file>
 
 SUDO APT INSTALL
 
+sudo apt install zram-tools # set defaults at: sudo vim /etc/default/zramswap; sudo systemctl restart zramswap
 sudo apt install xclip  # copy/paste tool with clipboard
 sudo apt install sgt-puzzles  #  the correct minesweeper
 sudo apt install tree # nice directory display
