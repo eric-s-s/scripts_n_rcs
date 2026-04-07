@@ -77,6 +77,7 @@ alias clean-clipboard="xclip -select c -o | tr -cd '\11\12\15\40-\176' | xclip -
 alias poop-emoji="echo -n '💩' | xclip -selection c -i"
 alias jira-to-clip="xclip -o -sel c | sed 's/.*\///' | xclip -i -sel c"
 alias file-size="numfmt --to=iec --format=\"%.2f\""
+alias restart-zram="sudo systemctl restart zramswap.service; zramctl"
 
 function clean-dir() {
     if [[ -z $1 ]]; then
