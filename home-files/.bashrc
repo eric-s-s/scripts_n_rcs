@@ -122,3 +122,6 @@ eval "$(uv generate-shell-completion bash)"
 # add Pulumi to the PATH
 export PATH=$PATH:/home/eric.shaw/.pulumi/bin
 
+# add coding agent to PATH
+export PATH=$PATH:/home/eric.shaw/agent-system/bin
+
