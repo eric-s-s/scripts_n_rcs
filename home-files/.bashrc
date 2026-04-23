@@ -3,10 +3,6 @@
 # for examples
 
 
-# export PYTHONPATH=$PYTHONPATH:/home/eric.shaw/workspace/DataRobot
-# exporting pythonpath did a weird thing with my imports and venvs. 
-# specifically: cd dr_workspace/jenkins-jobs;workon jjb;./builder testupdate THING
-
 # PATH SETTINGS
 export PATH="$PATH:/usr/local/go/bin:/$HOME/go/bin:/$HOME/bin:/$HOME/.local/bin"
 
@@ -100,9 +96,6 @@ export WORKSPACE="$HOME/workspace"
 export NVM_DIR="$([ -z "${XDG_CONFIG_HOME-}" ] && printf %s "${HOME}/.nvm" || printf %s "${XDG_CONFIG_HOME}/nvm")"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh" # This loads nvm
 
-#THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
-export SDKMAN_DIR="/home/eric.shaw/.sdkman"
-[[ -s "/home/eric.shaw/.sdkman/bin/sdkman-init.sh" ]] && source "/home/eric.shaw/.sdkman/bin/sdkman-init.sh"
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
 # Generated for envman. Do not edit.
@@ -119,9 +112,6 @@ complete -C '/usr/local/bin/aws_completer' aws
 TZ=America/New_York;export TZ
 eval "$(uv generate-shell-completion bash)"
 
-# add Pulumi to the PATH
-export PATH=$PATH:/home/eric.shaw/.pulumi/bin
-
 # add coding agent to PATH
-export PATH=$PATH:/home/eric.shaw/agent-system/bin
+export PATH=$PATH:$HOME/agent-system/bin
 

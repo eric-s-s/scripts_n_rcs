@@ -94,6 +94,8 @@ function branch-from-jira() {
 function gp_portal() {
         echo "dr-prismaaccess.gpcloudservice.com" | clip
 }
+alias dr-vim="LD_LIBRARY_PATH= vim"
+alias no-ld="LD_LIBRARY_PATH= "
 
 function set-resolv() {
     cat /etc/resolv.conf

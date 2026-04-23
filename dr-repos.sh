@@ -21,6 +21,7 @@ git clone git@github.com:datarobot/global-infrastructure.git
 git clone git@github.com:datarobot/harness-infra.git
 git clone git@github.com:datarobot/insights-jobs.git
 git clone git@github.com:datarobot/insights-service.git
+git clone git@github.com:datarobot/ironman-skills.git
 git clone git@github.com:datarobot/jenkins-jobs.git
 git clone git@github.com:datarobot/lab-machines.git
 git clone git@github.com:datarobot/mcp_server_for_datarobot.git
@@ -30,6 +31,7 @@ git clone git@github.com:datarobot/mldev-observability.git
 git clone git@github.com:datarobot/mldev-scripts.git
 git clone git@github.com:datarobot/mlops_infrastructure.git
 git clone git@github.com:datarobot/mlops-scripts.git
+git clone git@github.com:datarobot/nemoclaw-dr-agent.git
 git clone git@github.com:datarobot/ocr-service.git
 git clone git@github.com:datarobot/public_api_client.git
 git clone git@github.com:datarobot/quantum-builders.git

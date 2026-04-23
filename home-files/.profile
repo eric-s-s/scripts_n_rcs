@@ -30,9 +30,6 @@ if [ -d "$HOME/.local/bin" ] ; then
 fi
 
 
-# Added by Toolbox App
-export PATH="$PATH:/home/eric.shaw/.local/share/JetBrains/Toolbox/scripts"
-
 # pyenv
 export PYENV_ROOT="$HOME/.pyenv"
 command -v pyenv >/dev/null || export PATH="$PYENV_ROOT/bin:$PATH"
@@ -43,5 +40,3 @@ eval "$(pyenv init -)"
 
 TZ='America/New_York'; export TZ
 
-# Created by `pipx` on 2026-03-14 01:33:13
-export PATH="$PATH:/home/eric-shaw/.local/bin"
