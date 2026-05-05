@@ -11,12 +11,14 @@ git clone git@github.com:datarobot/coding-interview-questions.git
 git clone git@github.com:datarobot/custom-task-stackbot.git
 git clone git@github.com:datarobot/data-prep-devops.git
 git clone git@github.com:datarobot/datarobot-app-charts.git
+git clone git@github.com:datarobot/datarobot-docs.git
 git clone git@github.com:datarobot/datarobot-user-models.git
 git clone git@github.com:datarobot/delete-all-the-things.git
 git clone git@github.com:datarobot/drcajenkins.git
 git clone git@github.com:datarobot/drlayout.git
 git clone git@github.com:datarobot/dr-otel.git
 git clone git@github.com:datarobot/dr-usertool.git
+git clone git@github.com:datarobot/engprod.git
 git clone git@github.com:datarobot/global-infrastructure.git
 git clone git@github.com:datarobot/harness-infra.git
 git clone git@github.com:datarobot/insights-jobs.git
