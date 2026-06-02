@@ -8,10 +8,12 @@ git clone git@github.com:datarobot/chronosphere-infra.git
 git clone git@github.com:datarobot/cicada.git
 git clone git@github.com:datarobot/cloud-docs.git
 git clone git@github.com:datarobot/coding-interview-questions.git
+git clone git@github.com:datarobot/customer-config-db.git
 git clone git@github.com:datarobot/custom-task-stackbot.git
 git clone git@github.com:datarobot/data-prep-devops.git
 git clone git@github.com:datarobot/datarobot-app-charts.git
 git clone git@github.com:datarobot/datarobot-docs.git
+git clone git@github.com:datarobot/datarobot-genai.git
 git clone git@github.com:datarobot/datarobot-user-models.git
 git clone git@github.com:datarobot/delete-all-the-things.git
 git clone git@github.com:datarobot/drcajenkins.git
@@ -20,6 +22,7 @@ git clone git@github.com:datarobot/dr-otel.git
 git clone git@github.com:datarobot/dr-usertool.git
 git clone git@github.com:datarobot/engprod.git
 git clone git@github.com:datarobot/global-infrastructure.git
+git clone git@github.com:datarobot/global-mcp.git
 git clone git@github.com:datarobot/harness-infra.git
 git clone git@github.com:datarobot/insights-jobs.git
 git clone git@github.com:datarobot/insights-service.git
@@ -33,7 +36,9 @@ git clone git@github.com:datarobot/mldev-observability.git
 git clone git@github.com:datarobot/mldev-scripts.git
 git clone git@github.com:datarobot/mlops_infrastructure.git
 git clone git@github.com:datarobot/mlops-scripts.git
+git clone git@github.com:datarobot/nbx-kernels.git
 git clone git@github.com:datarobot/nemoclaw-dr-agent.git
+git clone git@github.com:datarobot/notebooks.git
 git clone git@github.com:datarobot/ocr-service.git
 git clone git@github.com:datarobot/public_api_client.git
 git clone git@github.com:datarobot/quantum-builders.git
