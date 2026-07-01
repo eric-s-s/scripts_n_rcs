@@ -1,16 +1,27 @@
-SNAP
+eric-shaw:~/scripts_n_rcs (master) $ snap list 
+Name                       Version                         Rev    Tracking         Publisher       Notes
+bare                       1.0                             5      latest/stable    canonical✓      base
+core18                     20260204                        2999   latest/stable    canonical✓      base
+core20                     20260410                        2866   latest/stable    canonical✓      base
+core22                     20260225                        2411   latest/stable    canonical✓      base
+core24                     20260410                        1643   latest/stable    canonical✓      base
+firefox                    152.0.3-1                       8568   latest/stable/…  mozilla✓        -
+firmware-updater           0+git.5645b80                   226    1/stable/…       canonical✓      -
+gnome-3-38-2004            0+git.efb213a                   143    latest/stable    canonical✓      -
+gnome-42-2204              0+git.c1d3d69-sdk0+git.015db9a  247    latest/stable/…  canonical✓      -
+gnome-46-2404              0+git.f1cd5fa-sdk0+git.ca9c59c  153    latest/stable    canonical✓      -
+gtk-common-themes          0.1-81-g442e511                 1535   latest/stable/…  canonical✓      -
+kooha                      2.3.0                           9      latest/stable    seadve          - # animated gif recorder
+mesa-2404                  25.0.7-snap211                  1165   latest/stable    canonical✓      -
+pinta                      3.1.2                           94     latest/stable    james-carroll✪  -
+postman                    11.71.7                         360    v11/stable       postman-inc✓    -
+slack                      4.50.136                        250    latest/stable    slack✓          -
+snap-store                 0+git.10310e85                  1367   2/stable/…       canonical✓      -
+snapd                      2.75.2                          26865  latest/stable    canonical✓      snapd
+snapd-desktop-integration  0.9                             387    latest/stable/…  canonical✓      -
+thunderbird                140.12.0esr-1                   1155   latest/stable/…  canonical✓      -
+yq                         v4.49.2                         2759   latest/stable    mikefarah       -
 
-
-Name               Version          Rev    Tracking         Publisher       Notes
-bare               1.0              5      latest/stable    canonical*      base
-core               16-2.51.4        11606  latest/stable    canonical*      core
-core18             20210722         2128   latest/stable    canonical*      base
-core20             20210702         1081   latest/stable    canonical*      base
-gnome-3-26-1604    3.26.0.20210629  104    latest/stable/…  canonical*      -
-gtk-common-themes  0.1-59-g7bca6ae  1519   latest/stable    canonical*      -
-postman            7.36.5           133    latest/stable    postman-inc*    -
-snapd              2.51.7           13170  latest/stable    canonical*      snapd
-yq                 v4.49.2          2759   latest/stable    mikefarah       -
 
 
 DEB PACKAGES
