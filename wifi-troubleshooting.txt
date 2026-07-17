@@ -1,0 +1,56 @@
+## WIFI Band Management
+
+`nmcli dev wifi` shows you available wifis and channels.  channels 1-13 are 2.4GHz and channels >=36 are 5GHz.
+if 5GHz is over 60-70% then it's stable signal, otherwise router is too far away and use 2.4
+
+`nmcli connection show <wifi-name>` show what the setting are.  `802-11-wireless.band: bg` means that it is 2.4GHz
+
+`nmcli connection modify <wifi-name> 802-11-wireless.band "bg"` "bg" is 2.4GHz and "a" is 5GHz and "" is auto
+force the change with `nmcli connection up <wifi-name>`
+
+
+## ACD Management
+
+### What
+You can safely disable ACD(automatic conflict detection) if 99% of your internet usage happens on your home, work, or school network, and you aren't manually messing with your router's IP settings.
+
+The feature exists to protect networks from a very specific accident: two devices accidentally claiming the exact same IP address (e.g., 192.168.1.203), which breaks the internet for both of them.
+
+### Should I
+Here is a quick checklist to help you decide if it is safe to turn off:
+
+It is 100% Safe to Disable If:
+- You are on a standard home router. Modern routers use DHCP (Dynamic Host Configuration Protocol), which acts like a smart parking attendant. It remembers every phone, laptop, and smart TV in your house and automatically hands out unique IP addresses so they never crash into each other.
+- You use standard automatic network settings on Ubuntu (you haven't gone into your settings and forced a manual/static IP address).
+
+Do NOT Disable It If:
+- You regularly work on massive, enterprise-level corporate networks where network administrators frequently assign static, manual IP addresses to equipment.
+- You manually configure static IPs on your own devices and have a habit of forgetting which numbers you already used.
+
+### Actions
+
+`sudo vim /etc/NetworkManager/NetworkManager.conf`
+
+under `[main]` add:
+```
+no-auto-default=*
+acd=false
+```
+then `sudo systemctl restart NetworkManager`
+
+### Enabling
+
+The no-auto-default=* setting tells NetworkManager: "Do not automatically create default, generic wired connection profiles for my network cards."
+
+By default, whenever NetworkManager detects an ethernet port (wired network interface) that doesn't have a saved configuration profile, it automatically creates a temporary, generic connection profile for it so you can plug in a cable and get online instantly.
+
+The asterisk (*) is a wildcard that means apply this rule to all network interfaces.
+
+Why it was included in Fix B
+When modifying the main /etc/NetworkManager/NetworkManager.conf file, adding no-auto-default=* is a safety best-practice. It locks down the configuration and forces NetworkManager to strictly rely only on the explicit connection profiles you have manually approved or connected to.
+
+By preventing NetworkManager from generating background default profiles on the fly, it eliminates a common source of background connection conflicts—ensuring it isn't trying to spin up a phantom ethernet profile while your Wi-Fi card is busy authenticating.
+
+Do you need to remove it?
+If you are reverting your settings back to default, you can safely remove no-auto-default=* right along with the acd=false line. Removing it will allow Ubuntu to go back to its default behavior of automatically setting up a wired connection the moment you plug an ethernet cable into your laptop.
+
