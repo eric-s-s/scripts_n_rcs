@@ -15,7 +15,6 @@ kooha                      2.3.0                           9      latest/stable 
 mesa-2404                  25.0.7-snap211                  1165   latest/stable    canonical✓      -
 pinta                      3.1.2                           94     latest/stable    james-carroll✪  -
 postman                    11.71.7                         360    v11/stable       postman-inc✓    -
-slack                      4.50.136                        250    latest/stable    slack✓          -
 snap-store                 0+git.10310e85                  1367   2/stable/…       canonical✓      -
 snapd                      2.75.2                          26865  latest/stable    canonical✓      snapd
 snapd-desktop-integration  0.9                             387    latest/stable/…  canonical✓      -
@@ -26,11 +25,13 @@ yq                         v4.49.2                         2759   latest/stable 
 
 DEB PACKAGES
 
+sudo apt install ./<path-to-file> (preferred for dependency handling)
 sudo dpkg -i <deb file>
 
     pgcli
     mongo-db compass  
     vscode
+    slack
 
 SUDO APT INSTALL
 
