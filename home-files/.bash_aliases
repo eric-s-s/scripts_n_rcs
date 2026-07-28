@@ -78,6 +78,7 @@ alias poop-emoji="echo -n '💩' | xclip -selection c -i"
 alias jira-to-clip="xclip -o -sel c | sed 's/.*\///' | xclip -i -sel c"
 alias file-size="numfmt --to=iec --format=\"%.2f\""
 alias restart-zram="sudo systemctl restart zramswap.service; zramctl"
+alias decodeb64url="basenc --base64url -di"
 
 function clean-dir() {
     if [[ -z $1 ]]; then
