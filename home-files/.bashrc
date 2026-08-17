@@ -89,8 +89,6 @@ fi
 # kubectl bash completion
 source <(kubectl completion bash)
 
-[ -f ~/.quantumrc ] && source ~/.quantumrc
-
 export WORKSPACE="$HOME/workspace"
 
 export NVM_DIR="$([ -z "${XDG_CONFIG_HOME-}" ] && printf %s "${HOME}/.nvm" || printf %s "${XDG_CONFIG_HOME}/nvm")"
@@ -101,13 +99,9 @@ export NVM_DIR="$([ -z "${XDG_CONFIG_HOME-}" ] && printf %s "${HOME}/.nvm" || pr
 # Generated for envman. Do not edit.
 [ -s "$HOME/.config/envman/load.sh" ] && source "$HOME/.config/envman/load.sh"
 
-export PYENV_ROOT="$HOME/.pyenv"
-command -v pyenv >/dev/null || export PATH="$PYENV_ROOT/bin:$PATH"
-eval "$(pyenv init -)"
-eval "$(pyenv virtualenv-init -)"
 
 # AWS CLI bash completion
-complete -C '/usr/local/bin/aws_completer' aws
+# complete -C '/usr/local/bin/aws_completer' aws
 
 TZ=America/New_York;export TZ
 eval "$(uv generate-shell-completion bash)"
@@ -115,6 +109,8 @@ eval "$(uv generate-shell-completion bash)"
 # add coding agent to PATH
 export PATH=$PATH:$HOME/agent-system/bin
 
+# add ssh-agent socket for systemd
+export SSH_AUTH_SOCK="$XDG_RUNTIME_DIR/ssh-agent.socket"
 
 # add Pulumi to the PATH
 export PATH=$PATH:/home/eric-shaw/.pulumi/bin

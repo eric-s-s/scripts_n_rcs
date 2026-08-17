@@ -116,3 +116,5 @@ source $ZSH/oh-my-zsh.sh
 [ -f ~/.quantumrc ] && source ~/.quantumrc
 
 export WORKSPACE="$HOME/workspace"
+
+. "$HOME/.local/share/../bin/env"
