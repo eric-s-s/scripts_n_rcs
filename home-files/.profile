@@ -30,13 +30,15 @@ if [ -d "$HOME/.local/bin" ] ; then
 fi
 
 
-# pyenv
-export PYENV_ROOT="$HOME/.pyenv"
-command -v pyenv >/dev/null || export PATH="$PYENV_ROOT/bin:$PATH"
-eval "$(pyenv init -)"
-
 # Generated for envman. Do not edit.
 [ -s "$HOME/.config/envman/load.sh" ] && source "$HOME/.config/envman/load.sh"
 
 TZ='America/New_York'; export TZ
+
+
+. "$HOME/.local/share/../bin/env"
+
+
+# Added by Toolbox App
+export PATH="$PATH:/home/ericss/.local/share/JetBrains/Toolbox/scripts"
 
