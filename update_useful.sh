@@ -1,3 +1,4 @@
+#! /bin/bash
 
 cat home_files.txt | xargs -I{} cp ~/{} home-files
 cat omarchy_systemd.txt | xargs -I{} cp ~/.config/systemd/user/{} omarchy-systemd
