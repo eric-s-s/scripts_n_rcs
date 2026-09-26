@@ -13,26 +13,26 @@ function mv-to-old-files-dir () {
 }
 
 
-mkdir -p ~/old-dot-files
+mkdir -p "${HOME}/old-dot-files"
 
-for short_file_name in $(cat home_files.txt); do
-  mv-to-old-files-dir "~/${short_file_name}" "~/old-dot-files/"
-  cp "home-files/${short_file_name}" ~/
-done
+while IFS= read -r short_file_name; do
+  mv-to-old-files-dir "${HOME}/${short_file_name}" "${HOME}/old-dot-files/"
+  cp "home-files/${short_file_name}" "${HOME}/"
+done < home_files.txt
 
 
-mkdir -p ~/old-bin-files
+mkdir -p "${HOME}/old-bin-files"
 
-for short_file_name in $(cat bin_files.txt); do
-  mv-to-old-files-dir "~/${short_file_name}" "~/old-bin-files/"
-  cp "bin-files/${short_file_name}" ~/bin/
-done
+while IFS= read -r short_file_name; do
+  mv-to-old-files-dir "${HOME}/${short_file_name}" "${HOME}/old-bin-files/"
+  cp "bin-files/${short_file_name}" "${HOME}/bin/"
+done < bin_files.txt
 
-mkdir -p ~/old-systemd-files
+mkdir -p "${HOME}/old-systemd-files"
 
-for short_file_name in $(cat omarchy_systemd.txt); do
+while IFS= read -r short_file_name; do
   systemd_dir="${HOME}/.config/systemd/user/"
   mv-to-old-files-dir "${systemd_dir}${short_file_name}" "${HOME}/old-systemd-files/"
   cp "omarchy-systemd/${short_file_name}" "${systemd_dir}"
-done
+done < omarchy_systemd.txt
 
