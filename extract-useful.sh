@@ -2,17 +2,37 @@
 
 echo "missing config files=.config/pip/pip.conf .pypirc .aws/config"
 
-[[ ! -d ~/old-dot-files ]] && mkdir ~/old-dot-files
 
-cat home_files.txt | xargs -I{} mv ~/{} ~/old-dot-files
-cat home_files.txt | xargs -I{} cp home-files/{} ~/
+function mv-to-old-files-dir () {
+  full_filename="$1"
+  target_dir="$2"
+  
+  if [[ -e "$full_filename" ]]; then
+    mv "$full_filename" "$target_dir"
+  fi
+}
 
-[[ ! -d ~/old-bin-files ]] && mkdir ~/old-bin-files
 
-cat bin_files.txt | xargs -I{} mv ~/bin/{} ~/old-bin-files
-cat bin_files.txt | xargs -I{} cp bin-files/{} ~/bin
+mkdir -p ~/old-dot-files
 
-[[ ! -d ~/old-systemd-files ]] && mkdir ~/old-systemd-files
+for short_file_name in $(cat home_files.txt); do
+  mv-to-old-files-dir "~/${short_file_name}" "~/old-dot-files/"
+  cp "home-files/${short_file_name}" ~/
+done
 
-cat omarch_systemd.txt | xargs -I{} mv ~/{} ~/old-systemd-files
-cat omarch_systemd.txt | xargs -I{} cp  omarchy-systemd/{} ~/.config/systemd/user/ssh-agent.service 
+
+mkdir -p ~/old-bin-files
+
+for short_file_name in $(cat bin_files.txt); do
+  mv-to-old-files-dir "~/${short_file_name}" "~/old-bin-files/"
+  cp "bin-files/${short_file_name}" ~/bin/
+done
+
+mkdir -p ~/old-systemd-files
+
+for short_file_name in $(cat omarchy_systemd.txt); do
+  systemd_dir="${HOME}/.config/systemd/user/"
+  mv-to-old-files-dir "${systemd_dir}${short_file_name}" "${HOME}/old-systemd-files/"
+  cp "omarchy-systemd/${short_file_name}" "${systemd_dir}"
+done
+
