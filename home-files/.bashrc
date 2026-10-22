@@ -113,6 +113,4 @@ export PATH=$PATH:$HOME/agent-system/bin
 export SSH_AUTH_SOCK="$XDG_RUNTIME_DIR/ssh-agent.socket"
 systemctl --user enable --now ssh-agent
 
-# add Pulumi to the PATH
-export PATH=$PATH:/home/eric-shaw/.pulumi/bin
-
+. "$HOME/.local/share/../bin/env"

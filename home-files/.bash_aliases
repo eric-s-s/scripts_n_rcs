@@ -77,7 +77,6 @@ alias clipboard-copy="wl-copy -n"
 alias clipboard-paste="wl-paste -n"
 alias clean-clipboard="clipboard-paste | tr -cd '\11\12\15\40-\176' | clipboard-copy"
 alias poop-emoji="echo -n '💩' | clipboard-copy"
-alias jira-to-clip="xclip -o -sel c | sed 's/.*\///' | xclip -i -sel c"
 alias file-size="numfmt --to=iec --format=\"%.2f\""
 alias restart-zram="sudo systemctl restart zramswap.service; zramctl"
 alias decodeb64url="basenc --base64url -di"
@@ -92,20 +91,6 @@ function clean-dir() {
 
 function branch-from-jira() {
     git checkout -b "eric-s-s/$(basename ${1})/${2}"
-}
-
-function gp_portal() {
-        echo "dr-prismaaccess.gpcloudservice.com" | clip
-}
-alias dr-vim="LD_LIBRARY_PATH= vim"
-alias no-ld="LD_LIBRARY_PATH= "
-
-function set-resolv() {
-    cat /etc/resolv.conf
-    if grep "nameserver 10\." /etc/resolv.conf; then
-        echo "setting"
-        sudo sed -i "s/^\(nameserver 192\)/#\1/" /etc/resolv.conf
-    fi
 }
 
 function convert-to-ip-addr {
@@ -148,4 +133,9 @@ function repo-grep-replace() {
 
     git grep --name-only "${1}" | xargs sed -i "s/${1}/${2}/g"
 
+}
+
+function github-ssh() {
+  ssh-add "${HOME}/.ssh/id_gh"
+  ssh -T git@github.com
 }
