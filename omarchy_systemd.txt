@@ -1,1 +1,2 @@
 ssh-agent.service
+touchpad-autoswitch.service

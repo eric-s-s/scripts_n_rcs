@@ -109,8 +109,4 @@ eval "$(uv generate-shell-completion bash)"
 # add coding agent to PATH
 export PATH=$PATH:$HOME/agent-system/bin
 
-# add ssh-agent socket for systemd
-export SSH_AUTH_SOCK="$XDG_RUNTIME_DIR/ssh-agent.socket"
-systemctl --user enable --now ssh-agent
-
 . "$HOME/.local/share/../bin/env"

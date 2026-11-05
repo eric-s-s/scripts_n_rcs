@@ -1,4 +1,20 @@
 # ~/.config/systemd/user/ssh-agent.service
+#
+# Runs one ssh-agent per login, listening on $XDG_RUNTIME_DIR/ssh-agent.socket.
+#
+# After copying this file into place (one time only, the symlink it creates
+# survives reboots, so it does not need to be repeated in ~/.bashrc):
+#   systemctl --user daemon-reload
+#   systemctl --user enable --now ssh-agent.service
+#
+# Check on it:
+#   systemctl --user status ssh-agent.service
+#
+# Shells and graphical apps still need to know where the socket is. That is
+# set session-wide by ~/.config/environment.d/ssh-agent.conf, which contains:
+#   SSH_AUTH_SOCK=${XDG_RUNTIME_DIR}/ssh-agent.socket
+# Copy that file into place too; it takes effect at the next login.
+
 [Unit]
 Description=SSH Agent
 
@@ -9,4 +25,3 @@ ExecStart=/usr/bin/ssh-agent -D -a $SSH_AUTH_SOCK
 
 [Install]
 WantedBy=default.target
-
