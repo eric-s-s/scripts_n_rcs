@@ -2,6 +2,7 @@
 
 cat home_files.txt | xargs -I{} cp ~/{} home-files
 cat omarchy_systemd.txt | xargs -I{} cp ~/.config/systemd/user/{} omarchy-systemd
+cat omarchy_systemd_configs.txt | xargs -I{} cp ~/.config/environment.d/{} omarchy-systemd-configs
 
 ls ~/bin | grep -v "\(jetbrains\|oc\)" | xargs -I{} cp ~/bin/{} bin-files
 

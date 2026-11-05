@@ -1,0 +1,31 @@
+# ~/.config/systemd/user/touchpad-autoswitch.service
+#
+# Turns the touchpad off while an external mouse is plugged in, via
+# ~/bin/touchpad-autoswitch.sh.
+#
+# After copying this file into place:
+#   systemctl --user daemon-reload
+#   systemctl --user enable --now touchpad-autoswitch.service
+#
+# Check on it:
+#   systemctl --user status touchpad-autoswitch.service
+#   journalctl --user -u touchpad-autoswitch.service -f
+#
+# Turn it off (now and at future logins):
+#   systemctl --user disable --now touchpad-autoswitch.service
+
+[Unit]
+Description=Turn the touchpad off while an external mouse is connected
+# Needs hyprctl and the Omarchy OSD, both available only after the session is up.
+After=graphical-session.target
+PartOf=graphical-session.target
+ConditionEnvironment=WAYLAND_DISPLAY
+
+[Service]
+Type=simple
+ExecStart=%h/bin/touchpad-autoswitch.sh
+Restart=always
+RestartSec=5
+
+[Install]
+WantedBy=graphical-session.target

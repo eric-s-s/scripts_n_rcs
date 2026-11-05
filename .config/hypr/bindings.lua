@@ -60,3 +60,5 @@ end
 
 o.bind("SUPER + CTRL + ALT + LEFT", "Move tab left in group", hl.dsp.group.move_window({ forward = false }))
 o.bind("SUPER + CTRL + ALT + RIGHT", "Move tab right in group", hl.dsp.group.move_window({ forward = true }))
+
+o.bind_toggle("SUPER + SHIFT + T", "Toggle touchpad", "touchpad")
