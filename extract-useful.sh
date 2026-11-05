@@ -36,3 +36,11 @@ while IFS= read -r short_file_name; do
   cp "omarchy-systemd/${short_file_name}" "${systemd_dir}"
 done < omarchy_systemd.txt
 
+mkdir -p "${HOME}/old-systemd-conf-files"
+
+while IFS= read -r short_file_name; do
+  systemd_conf_dir="${HOME}/.config/environment.d/"
+  mv-to-old-files-dir "${systemd_conf_dir}${short_file_name}" "${HOME}/old-systemd-conf-files/"
+  cp "omarchy-systemd-configs/${short_file_name}" "${systemd_conf_dir}"
+done < omarchy_systemd_configs.txt
+
