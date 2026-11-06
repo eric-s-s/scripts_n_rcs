@@ -1,0 +1,4 @@
+systemd/user/ssh-agent.service
+systemd/user/touchpad-autoswitch.service
+environment.d/ssh-agent.conf
+nvim/lua/plugins/noice-shell.lua
