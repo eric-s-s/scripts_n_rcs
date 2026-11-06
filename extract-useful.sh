@@ -28,28 +28,12 @@ while IFS= read -r short_file_name; do
   cp "bin-files/${short_file_name}" "${HOME}/bin/"
 done < bin_files.txt
 
-mkdir -p "${HOME}/old-systemd-files"
-
-while IFS= read -r short_file_name; do
-  systemd_dir="${HOME}/.config/systemd/user/"
-  mv-to-old-files-dir "${systemd_dir}${short_file_name}" "${HOME}/old-systemd-files/"
-  cp "omarchy-systemd/${short_file_name}" "${systemd_dir}"
-done < omarchy_systemd.txt
-
-mkdir -p "${HOME}/old-systemd-conf-files"
-
-while IFS= read -r short_file_name; do
-  systemd_conf_dir="${HOME}/.config/environment.d/"
-  mv-to-old-files-dir "${systemd_conf_dir}${short_file_name}" "${HOME}/old-systemd-conf-files/"
-  cp "omarchy-systemd-configs/${short_file_name}" "${systemd_conf_dir}"
-done < omarchy_systemd_configs.txt
-
-
-mkdir -p "${HOME}/old-nvim-plugin-files"
-
-while IFS= read -r short_file_name; do
-  nvim_plugins_dir="${HOME}/.config/nvim/lua/plugins/"
-  mkdir -p "$nvim_plugins_dir"
-  mv-to-old-files-dir "${nvim_plugins_dir}${short_file_name}" "${HOME}/old-nvim-plugin-files/"
-  cp ".config/nvim/lua/plugins/${short_file_name}" "${nvim_plugins_dir}"
-done < nvim_plugin_files.txt
+# Every file under the repo .config tree, with its path relative to .config
+while IFS= read -r config_file; do
+  rel_dir="$(dirname "$config_file")"
+  config_dir="${HOME}/.config/${rel_dir}"
+  old_dir="${HOME}/old-config/${rel_dir}"
+  mkdir -p "$config_dir" "$old_dir"
+  mv-to-old-files-dir "${HOME}/.config/${config_file}" "${old_dir}/"
+  cp ".config/${config_file}" "${config_dir}/"
+done < <(find .config -type f -printf '%P\n')
