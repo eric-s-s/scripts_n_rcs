@@ -44,3 +44,12 @@ while IFS= read -r short_file_name; do
   cp "omarchy-systemd-configs/${short_file_name}" "${systemd_conf_dir}"
 done < omarchy_systemd_configs.txt
 
+
+mkdir -p "${HOME}/old-nvim-plugin-files"
+
+while IFS= read -r short_file_name; do
+  nvim_plugins_dir="${HOME}/.config/nvim/lua/plugins/"
+  mkdir -p "$nvim_plugins_dir"
+  mv-to-old-files-dir "${nvim_plugins_dir}${short_file_name}" "${HOME}/old-nvim-plugin-files/"
+  cp ".config/nvim/lua/plugins/${short_file_name}" "${nvim_plugins_dir}"
+done < nvim_plugin_files.txt
