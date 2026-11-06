@@ -111,5 +111,3 @@ export PATH=$PATH:$HOME/agent-system/bin
 
 . "$HOME/.local/share/../bin/env"
 
-# TODO DELETE THIS
-export SSH_AUTH_SOCK="$XDG_RUNTIME_DIR/ssh-agent.socket"
