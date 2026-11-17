@@ -21,6 +21,12 @@ snapd-desktop-integration  0.9                             387    latest/stable/
 thunderbird                140.12.0esr-1                   1155   latest/stable/…  canonical✓      -
 yq                         v4.49.2                         2759   latest/stable    mikefarah       -
 
+PACMAN
+
+pacman -S bind  # gets `dig`
+pacman -S age   # simple file encryption
+pacman -S shellcheck
+
 
 
 DEB PACKAGES
